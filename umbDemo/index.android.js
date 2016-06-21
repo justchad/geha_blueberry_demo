@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-class gehaDemo extends Component {
+class umbDemo extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('gehaDemo', () => gehaDemo);
+AppRegistry.registerComponent('umbDemo', () => umbDemo);
