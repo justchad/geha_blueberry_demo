@@ -39,7 +39,7 @@ class Main extends Component {
         <View style={styles.contentwrapper}>
       
             <TouchableHighlight onPress={ this.navigate.bind(this, 'Main') } style={styles.button}>
-                <Text style={styles.welocome}>Home</Text>
+                <Text style={styles.welcome}>Home</Text>
             </TouchableHighlight>
         
         </View>
