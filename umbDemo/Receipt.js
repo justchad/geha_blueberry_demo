@@ -13,8 +13,8 @@ import {
   Text,
   Image,
   Dimensions,
-  View
-} from 'react-native';
+  View,
+} from 'react-native'
 
 
 //Dimensions and Calculated Heights
@@ -65,7 +65,7 @@ var h4                  = 22;
 var h5                  = 20;
 var h6                  = 18;
 
-class Main extends Component {
+class Receipt extends Component {
   
   navigate(routeName) {
     this.props.navigator.push({
@@ -106,7 +106,12 @@ class Main extends Component {
         <View style={styles.contentwrapper}>
       
             <TouchableHighlight onPress={ this.navigate.bind(this, 'Main') } style={styles.button}>
-                <Text style={styles.welcome}>Home</Text>
+                  <Image 
+                    style={styles.ItemImage}
+                    resizeMode={"contain"}
+                    source={{uri:'https://unsplash.it/600/400/?random'}}
+                  />
+                  <Text style={styles.welcome}>Home</Text>
             </TouchableHighlight>
         
         </View>
@@ -237,6 +242,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  ItemImage: {
+    width: 'width' / 2 - 20,
+    height: 200,
+  },
+  iconText: {
+    fontSize: h6,
+  },
 });
 
-export default Main
+export default Receipt

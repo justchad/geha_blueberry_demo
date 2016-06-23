@@ -65,7 +65,7 @@ var h4                  = 22;
 var h5                  = 20;
 var h6                  = 18;
 
-class Main extends Component {
+class Currentstore extends Component {
   
   navigate(routeName) {
     this.props.navigator.push({
@@ -239,4 +239,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Main
+export default Currentstore
