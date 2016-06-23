@@ -115,39 +115,46 @@ class Main extends Component {
             <View style={styles.footernavigation}>
                 <View style={styles.buttonWrap}>
                     <TouchableHighlight onPress={ this.navigate.bind(this, 'Currentstore') } style={styles.buttonbottom}>
-                        <Text>Current Store</Text>
+                        <Image
+                            style = {styles.imageicon}
+                            source = {require('./images/currentstoreIcon.png')}
+                        />
                     </TouchableHighlight>
                 </View>
-                <View style={styles.divider}>
-                    
-                </View>
+                
                 <View style={styles.buttonWrap}>
                     <TouchableHighlight onPress={ this.navigate.bind(this, 'Items') } style={styles.buttonbottom}>
-                        <Text>Items</Text>
+                        <Image
+                            style = {styles.imageicon}
+                            source = {require('./images/itemsIcon.png')}
+                        />
                     </TouchableHighlight>
                 </View>
-                <View style={styles.divider}>
-                    
-                </View>
+                
                 <View style={styles.buttonWrap}>
                     <TouchableHighlight onPress={ this.navigate.bind(this, 'Main') } style={styles.buttonbottom}>
-                        <Text>Main</Text>
+                        <Image
+                            style = {styles.imageicon}
+                            source = {require('./images/helpmeplanIcon.png')}
+                        />
                     </TouchableHighlight>
                 </View>
-                <View style={styles.divider}>
-                    
-                </View>
+                
                 <View style={styles.buttonWrap}>
                     <TouchableHighlight onPress={ this.navigate.bind(this, 'Exit') } style={styles.buttonbottom}>
-                        <Text>Exit</Text>
+                        <Image
+                            style = {styles.imageicon}
+                            source = {require('./images/historyIcon.png')}
+                        />
                     </TouchableHighlight>
                 </View>
-                <View style={styles.divider}>
-                    
-                </View>
+                
                 <View style={styles.buttonWrap}>
                     <TouchableHighlight onPress={ this.navigate.bind(this, 'Receipt') } style={styles.buttonbottom}>
-                        <Text>Receipt</Text>
+                        <Image
+                            style = {styles.imageicon}
+                            source = {require('./images/receiptIcon.png')}
+                        />
                     </TouchableHighlight>
                 </View>
             </View>
@@ -198,7 +205,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     height: contentHeight,
     padding: 10,
-    width: paddedWidth,
+    width: width,
   },
   footerwrapper: {
     justifyContent: 'center',
@@ -236,6 +243,10 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  imageicon: {
+    width: 75,
+    height: 45,
   },
 });
 
