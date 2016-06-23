@@ -12,6 +12,7 @@ import {
   AsyncStorage,
   Text,
   Image,
+  ScrollView,
   Dimensions,
   View
 } from 'react-native';
@@ -65,7 +66,7 @@ var h4                  = 22;
 var h5                  = 20;
 var h6                  = 18;
 
-class Main extends Component {
+class Exit extends Component {
   
   navigate(routeName) {
     this.props.navigator.push({
@@ -105,10 +106,12 @@ class Main extends Component {
       
         <View style={styles.contentwrapper}>
       
+            
+          <ScrollView>
             <TouchableHighlight onPress={ this.navigate.bind(this, 'Main') } style={styles.button}>
                 <Text style={styles.welcome}>Home</Text>
             </TouchableHighlight>
-        
+          </ScrollView>
         </View>
 
         <View style={styles.footerwrapper}>
@@ -239,4 +242,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Main
+export default Exit

@@ -65,7 +65,7 @@ var h4                  = 22;
 var h5                  = 20;
 var h6                  = 18;
 
-class Main extends Component {
+class Items extends Component {
   
   navigate(routeName) {
     this.props.navigator.push({
@@ -237,6 +237,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  iconText: {
+    fontSize: h6,
+  },
 });
 
-export default Main
+export default Items
