@@ -20,7 +20,7 @@ import {
 //Dimensions and Calculated Heights
 
 var {height, width}     = Dimensions.get('window');
-var headerHeight        = 85 - 1;
+var headerHeight        = 85 - 25;
 var footerHeight        = 70 - 1;
 var calculatedHeight    = height - headerHeight - footerHeight;
 var contentHeight       = calculatedHeight;
@@ -80,24 +80,8 @@ class Main extends Component {
         <View style={styles.headerwrapper}>
             <View style={styles.headernavigation}>
                 <View style={styles.buttonWrap}>
-                    <TouchableHighlight onPress={ this.navigate.bind(this, 'Main') } style={styles.button}>
-                        <Text>Home</Text>
-                    </TouchableHighlight>
-                </View>
-                <View style={styles.divider}>
-                    
-                </View>
-                <View style={styles.buttonWrap}>
-                    <TouchableHighlight onPress={ this.navigate.bind(this, 'Main') } style={styles.button}>
-                        <Text>Home</Text>
-                    </TouchableHighlight>
-                </View>
-                <View style={styles.divider}>
-                    
-                </View>
-                <View style={styles.buttonWrap}>
-                    <TouchableHighlight onPress={ this.navigate.bind(this, 'Main') } style={styles.button}>
-                        <Text>Home</Text>
+                    <TouchableHighlight onPress={ this.navigate.bind(this, 'Main') } style={styles.titlebutton}>
+                        <Text style={styles.headertitle}>CVS</Text>
                     </TouchableHighlight>
                 </View>
             </View>
@@ -106,8 +90,12 @@ class Main extends Component {
         <View style={styles.contentwrapper}>
       
             <TouchableHighlight onPress={ this.navigate.bind(this, 'Main') } style={styles.button}>
-                <Text style={styles.welcome}>Home</Text>
+                <Text style={styles.welcome}>Hello! I'm Your New App!</Text>
             </TouchableHighlight>
+            
+            <Text style={styles.p}>This is where we are going to drop our proximity technology! We are going to add a response, aware and detect state.</Text>
+            
+            <Text style={styles.p}>Click around to tour your new application! Have a peek at your NEAR FUTURE! Have Fun!</Text>
         
         </View>
 
@@ -166,6 +154,10 @@ class Main extends Component {
 }
 
 const styles = StyleSheet.create({
+  p: {
+    fontSize: p,
+    marginBottom: 10,
+  },
   wrapper: {
     flex:1,
     justifyContent: 'center',
@@ -180,6 +172,11 @@ const styles = StyleSheet.create({
     height: headerHeight,
     borderBottomWidth: 1,
     borderBottomColor: dividersDark,
+  },
+  headertitle: {
+    color: baseTextLight,
+    fontSize: 18,
+    fontWeight: 'bold',
   },
   divider: {
     justifyContent: 'center',
@@ -196,9 +193,9 @@ const styles = StyleSheet.create({
     padding:10,
     flexWrap: 'wrap',
     paddingTop: 0,
-    paddingBottom: 5,
+    paddingBottom: 0,
     marginTop: 25,
-    width: width
+    width: width,
   },
   contentwrapper: {
     alignSelf: 'stretch',
@@ -235,11 +232,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   welcome: {
-    fontSize: h1,
+    fontSize: h2,
     color: primaryTextDark,
+    marginBottom: 30,
+    marginTop: 15,
   },
   button: {
     height: 50,
+    alignSelf: 'stretch',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  titlebutton: {
     alignSelf: 'stretch',
     alignItems: 'center',
     justifyContent: 'center',
