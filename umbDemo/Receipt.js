@@ -13,14 +13,13 @@ import {
   Text,
   Image,
   Dimensions,
-  View,
-} from 'react-native'
-
+  View
+} from 'react-native';
 
 //Dimensions and Calculated Heights
 
 var {height, width}     = Dimensions.get('window');
-var headerHeight        = 85 - 1;
+var headerHeight        = 85 - 25;
 var footerHeight        = 70 - 1;
 var calculatedHeight    = height - headerHeight - footerHeight;
 var contentHeight       = calculatedHeight;
@@ -80,40 +79,21 @@ class Receipt extends Component {
         <View style={styles.headerwrapper}>
             <View style={styles.headernavigation}>
                 <View style={styles.buttonWrap}>
-                    <TouchableHighlight onPress={ this.navigate.bind(this, 'Main') } style={styles.button}>
-                        <Text>Home</Text>
-                    </TouchableHighlight>
-                </View>
-                <View style={styles.divider}>
-                    
-                </View>
-                <View style={styles.buttonWrap}>
-                    <TouchableHighlight onPress={ this.navigate.bind(this, 'Main') } style={styles.button}>
-                        <Text>Home</Text>
-                    </TouchableHighlight>
-                </View>
-                <View style={styles.divider}>
-                    
-                </View>
-                <View style={styles.buttonWrap}>
-                    <TouchableHighlight onPress={ this.navigate.bind(this, 'Main') } style={styles.button}>
-                        <Text>Home</Text>
+                    <TouchableHighlight onPress={ this.navigate.bind(this, 'Main') } style={styles.titlebutton}>
+                        <Text style={styles.headertitle}>CVS</Text>
                     </TouchableHighlight>
                 </View>
             </View>
         </View>
       
         <View style={styles.contentwrapper}>
-      
-            <TouchableHighlight onPress={ this.navigate.bind(this, 'Main') } style={styles.button}>
-                  <Image 
-                    style={styles.ItemImage}
+            <View style={styles.mockupwrapper}>
+                <Image 
+                    style={styles.mockupimage}
                     resizeMode={"contain"}
                     source = {require('./images/receiptPage.png')}
-                  />
-                  
-            </TouchableHighlight>
-        
+                />
+            </View>
         </View>
 
         <View style={styles.footerwrapper}>
@@ -186,6 +166,11 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: dividersDark,
   },
+  headertitle: {
+    color: baseTextLight,
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
   divider: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -201,16 +186,25 @@ const styles = StyleSheet.create({
     padding:10,
     flexWrap: 'wrap',
     paddingTop: 0,
-    paddingBottom: 5,
+    paddingBottom: 0,
     marginTop: 25,
-    width: width
+    width: width,
   },
   contentwrapper: {
     alignSelf: 'stretch',
     backgroundColor: '#FFFFFF',
     height: contentHeight,
-    padding: 10,
-    width: paddedWidth,
+    width: width,
+  },
+  mockupwrapper: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: width,
+    height: contentHeight,
+  },
+  mockupimage: {  
+    width: width,
+    height: contentHeight,
   },
   footerwrapper: {
     justifyContent: 'center',
@@ -249,12 +243,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  ItemImage: {
-    width: 'width' / 2 - 20,
-    height: 200,
-  },
-  iconText: {
-    fontSize: h6,
+  titlebutton: {
+    alignSelf: 'stretch',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   imageicon: {
     width: 75,
